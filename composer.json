@@ -1,0 +1,31 @@
+{
+    "name": "placidapp/placid-php",
+    "description": "PHP Wrapper around the Placid.app REST API",
+    "keywords": [
+        "placid-php"
+    ],
+    "homepage": "https://github.com/placidapp/placid-php",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Armin Ulrich",
+            "email": "armin@nifty.at",
+            "homepage": "https://placid.app",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Placid\\PHP\\": "src"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+   
+}
