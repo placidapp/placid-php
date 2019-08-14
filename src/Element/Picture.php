@@ -25,4 +25,9 @@ class Picture extends Element
         );
         return $this;
     }
+
+    public function toArrayUrl()
+    {
+        return $this->buildImageUrl($this->payload["image"]);
+    }
 }

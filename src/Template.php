@@ -7,6 +7,7 @@ use Placid\Element\Browserframe;
 use Placid\Element\Picture;
 use Placid\Element\Rectangle;
 use Placid\Element\Text;
+use function GuzzleHttp\Psr7\build_query;
 
 class Template
 {
@@ -19,7 +20,7 @@ class Template
     public function __construct($uuid, $apiKey = null)
     {
         $this->uuid = $uuid;
-        $this->fields = collect();
+        $this->fields = [];
         $this->apiKey = $apiKey;
     }
 
@@ -48,11 +49,25 @@ class Template
         return $this->fields[$string] = new Browserframe($string);
     }
 
-    public function getImage(): GeneratedImage
+    /**
+     * Create Image from Template; $createImageNow decides if it gets put into the queue or processed directly
+     *
+     * @param bool $createImageNow
+     *
+     * @return GeneratedImage
+     * @throws Exception
+     */
+    public function image($createImageNow = false): GeneratedImage
     {
+        $fields = [];
+        foreach ($this->fields as $key => $field) {
+            $fields[$key] = $field->toArray();
+        }
+
         $payload = [
+            'create_now' => $createImageNow,
             'webhook_success' => $this->successWebhook,
-            'fields' => $this->fields->toArray()
+            'fields' => $fields
         ];
 
         $ch = curl_init();
@@ -82,6 +97,28 @@ class Template
             $json['image_url'],
             $json['status']
         );
+    }
+
+    /**
+     * Return configured Template as placid.app URL String - to be embedded as Image directly
+     *
+     * @return string
+     * @throws Exception
+     */
+    public function toPlacidUrl(): string
+    {
+        $arr = [];
+        foreach ($this->fields as $key => $field) {
+            $fieldParam = $field->toArrayUrl();
+            if (is_array($fieldParam)) {
+                foreach ($fieldParam as $keyType => $value) {
+                    $arr[$key . "|" . $keyType] = $value;
+                }
+            } elseif ($fieldParam) {
+                $arr[$key] = $fieldParam;
+            }
+        }
+        return "https://placid.app/u/" . $this->uuid . "?" . build_query($arr);
     }
 
     private function getRequestUrl($uuid)

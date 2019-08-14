@@ -20,4 +20,9 @@ class Text extends Element
         $this->payload['color'] = $this->generateColorPayload($hexcode);
         return $this;
     }
+
+    public function toArrayUrl()
+    {
+        return $this->payload["text"] ?: null;
+    }
 }

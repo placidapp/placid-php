@@ -13,6 +13,11 @@ abstract class Element implements Arrayable
         return $this->payload;
     }
 
+    public function toArrayUrl()
+    {
+        return null;
+    }
+
     protected function generateTextPayload($text)
     {
         return $text;
@@ -31,5 +36,20 @@ abstract class Element implements Arrayable
             'imageSrc' => $type,
             'imageUrl' => $website_url
         ];
+    }
+
+    protected function buildImageUrl($image)
+    {
+        if (is_array($image)) {
+            $imageSrc = $image["imageSrc"];
+
+            $imageUrl = $image["imageUrl"];
+            if ($imageSrc == "link") {
+                $imageUrl = '$PIC$' . $imageUrl;
+            }
+
+            return $imageUrl;
+        }
+        return null;
     }
 }

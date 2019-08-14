@@ -32,4 +32,17 @@ class Browserframe extends Element
         );
         return $this;
     }
+    public function toArrayUrl()
+    {
+        $fields = [];
+        $url = $this->payload["url"];
+        if ($url) {
+            $fields["url"] = $this->payload["url"];
+        }
+        $image = $this->payload["image"];
+        if ($image) {
+            $fields["image"] = $this->buildImageUrl($image);
+        }
+        return $fields;
+    }
 }
