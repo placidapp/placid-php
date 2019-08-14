@@ -15,7 +15,7 @@ class Template
     private $successWebhook = null;
     private $uuid;
     private $fields = [];
-    private $apiUrl = "http://placid.test/api/rest";
+    private $apiUrl = "https://placid.app/api/rest";
 
     public function __construct($uuid, $apiKey = null)
     {
