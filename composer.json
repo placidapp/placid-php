@@ -21,11 +21,10 @@
     },
     "autoload": {
         "psr-4": {
-            "Placid\\PHP\\": "src"
+            "Placid\\": "src"
         }
     },
     "config": {
         "sort-packages": true
     }
-   
 }
