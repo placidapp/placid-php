@@ -1,4 +1,4 @@
-# Placid for Laravel
+# Placid for PHP
 [![Latest Version](https://img.shields.io/github/release/placidapp/placid-php.svg?style=flat-square)](https://github.com/placidapp/placid-php/releases)
 [![Total Downloads](https://img.shields.io/packagist/dt/placidapp/placid-php.svg?style=flat-square)](https://packagist.org/packages/placidapp/placid-php)
 
