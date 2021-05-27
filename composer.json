@@ -1,5 +1,5 @@
 {
-    "name": "placidapp/placid-php",
+    "name": "jurry/placid-php",
     "description": "PHP Wrapper around the Placid.app REST API, based on placidapp\n/\nplacid-php package",
     "keywords": [
         "placid-php"
