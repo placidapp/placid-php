@@ -1,6 +1,6 @@
 {
-    "name": "placidapp/placid-php",
-    "description": "PHP Wrapper around the Placid.app REST API",
+    "name": "jurry/placid-php",
+    "description": "PHP Wrapper around the Placid.app REST API, based on placidapp\n/\nplacid-php package",
     "keywords": [
         "placid-php"
     ],
@@ -12,6 +12,12 @@
             "email": "armin@nifty.at",
             "homepage": "https://placid.app",
             "role": "Developer"
+        },
+        {
+            "name": "Wajdi Jurry",
+            "email": "jurrywajdi@yahoo.com",
+            "homepage": "https://github.com/wajdijurry",
+            "role": "Maintainer"
         }
     ],
     "require": {
