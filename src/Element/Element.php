@@ -2,7 +2,7 @@
 
 namespace Placid\Element;
 
-use Illuminate\Contracts\Support\Arrayable;
+use Placid\Support\Arrayable;
 
 abstract class Element implements Arrayable
 {
@@ -44,7 +44,8 @@ abstract class Element implements Arrayable
             $imageSrc = $image["imageSrc"];
 
             $imageUrl = $image["imageUrl"];
-            if ($imageSrc == "link") {
+
+            if ($imageSrc === "link") {
                 $imageUrl = '$PIC$' . $imageUrl;
             }
 
