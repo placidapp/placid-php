@@ -1,6 +1,6 @@
 {
-    "name": "jurry/placid-php",
-    "description": "PHP Wrapper around the Placid.app REST API, based on placidapp\n/\nplacid-php package",
+    "name": "placidapp/placid-php",
+    "description": "PHP Wrapper around the Placid.app REST API",
     "keywords": [
         "placid-php"
     ],
