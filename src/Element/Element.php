@@ -2,7 +2,7 @@
 
 namespace Placid\Element;
 
-use Illuminate\Contracts\Support\Arrayable;
+use Placid\Interfaces\Arrayable;
 
 abstract class Element implements Arrayable
 {

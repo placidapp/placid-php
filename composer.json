@@ -12,6 +12,12 @@
             "email": "armin@nifty.at",
             "homepage": "https://placid.app",
             "role": "Developer"
+        },
+        {
+            "name": "Wajdi Jurry",
+            "email": "jurrywajdi@yahoo.com",
+            "homepage": "https://github.com/wajdijurry",
+            "role": "Maintainer"
         }
     ],
     "require": {
