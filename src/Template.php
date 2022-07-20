@@ -7,7 +7,6 @@ use Placid\Element\Browserframe;
 use Placid\Element\Picture;
 use Placid\Element\Rectangle;
 use Placid\Element\Text;
-use function GuzzleHttp\Psr7\build_query;
 
 class Template
 {
@@ -118,7 +117,7 @@ class Template
                 $arr[$key] = $fieldParam;
             }
         }
-        return "https://placid.app/u/" . $this->uuid . "?" . build_query($arr);
+        return "https://placid.app/u/" . $this->uuid . "?" . http_build_query($arr);
     }
 
     private function getRequestUrl($uuid)
